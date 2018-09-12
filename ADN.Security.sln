@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2019
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADN.Security", "ADN.Security\ADN.Security.csproj", "{F5A43A83-9BE0-495B-BF76-4BCFCBE4F7A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADN.Security", "src\ADN.Security\ADN.Security.csproj", "{F5A43A83-9BE0-495B-BF76-4BCFCBE4F7A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8626CC3F-19A8-4575-BEEA-28B7B20131DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DD7AC597-5C18-4524-A10A-01FBC647F51A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADN.Security.Tests", "tests\ADN.Security.Tests\ADN.Security.Tests.csproj", "{9FAC3206-EF5E-45E8-A0F0-9E2D011B0397}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +21,17 @@ Global
 		{F5A43A83-9BE0-495B-BF76-4BCFCBE4F7A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5A43A83-9BE0-495B-BF76-4BCFCBE4F7A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5A43A83-9BE0-495B-BF76-4BCFCBE4F7A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FAC3206-EF5E-45E8-A0F0-9E2D011B0397}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FAC3206-EF5E-45E8-A0F0-9E2D011B0397}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FAC3206-EF5E-45E8-A0F0-9E2D011B0397}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FAC3206-EF5E-45E8-A0F0-9E2D011B0397}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F5A43A83-9BE0-495B-BF76-4BCFCBE4F7A9} = {8626CC3F-19A8-4575-BEEA-28B7B20131DB}
+		{9FAC3206-EF5E-45E8-A0F0-9E2D011B0397} = {DD7AC597-5C18-4524-A10A-01FBC647F51A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E5ECF0D2-B61E-449D-A503-EE2CCB4A13BD}

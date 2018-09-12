@@ -1,0 +1,9 @@
+language: csharp
+solution: ADN.Security.sln
+mono: none
+dotnet: 2.0.0
+script:
+  - dotnet restore
+  - dotnet build ./src/ADN.Security/
+  - dotnet build ./tests/ADN.Security.Tests/
+  - dotnet test ./tests/ADN.Security.Tests/
