@@ -6,6 +6,7 @@ namespace ADN.Security
 {
     public abstract class CRC16
     {
-        public abstract ushort ComputeChecksum(byte[] bytes);
+        public abstract ushort ComputeChecksum(byte[] value);
+        public abstract ushort ComputeChecksum(string value);
     }
 }

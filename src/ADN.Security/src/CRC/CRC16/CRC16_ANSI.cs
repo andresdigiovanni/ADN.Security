@@ -39,22 +39,27 @@ namespace ADN.Security
             }
         }
 
-        public override ushort ComputeChecksum(byte[] bytes)
+        public override ushort ComputeChecksum(byte[] value)
         {
-            if (ReferenceEquals(bytes, null) || bytes.Length <= 0)
+            if (ReferenceEquals(value, null) || value.Length <= 0)
             {
-                throw (new ArgumentNullException("bytes"));
+                throw (new ArgumentNullException("value"));
             }
 
             ushort crc = 0;
 
-            for (int i = 0; i < bytes.Length; ++i)
+            for (int i = 0; i < value.Length; ++i)
             {
-                byte index = (byte)(crc ^ bytes[i]);
+                byte index = (byte)(crc ^ value[i]);
                 crc = (ushort)((crc >> 8) ^ _table[index]);
             }
 
             return crc;
+        }
+
+        public override ushort ComputeChecksum(string value)
+        {
+            return ComputeChecksum(Encoding.ASCII.GetBytes(value));
         }
     }
 }

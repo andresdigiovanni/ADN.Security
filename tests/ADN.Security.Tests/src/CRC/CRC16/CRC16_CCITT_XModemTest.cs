@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
@@ -8,19 +9,24 @@ namespace ADN.Security.Tests
     public class CRC16_CCITT_XModemTest
     {
         [Theory]
-        [InlineData("0123456789", 0x9C58)]
-        [InlineData("ABCDEF", 0x944D)]
-        [InlineData("abcdef", 0x3AFD)]
-        [InlineData("this_is_a_test", 0xFA23)]
-        [InlineData(" !$%'()*-./", 0x70D1)]
-        [InlineData(":;<=>?@", 0x578C)]
-        [InlineData("[\\]^_`{|}~", 0x5D34)]
-        public void ComputeChecksum_Valid(string value, ushort expected)
+        [ClassData(typeof(ComputeChecksum))]
+        public void ComputeChecksum_Bytes_Valid(string value, ushort expected)
         {
             var bytes = Encoding.ASCII.GetBytes(value);
             var crcfactory = new CRC16Factory();
             var crc = crcfactory.GetCRC16(CRC16Factory.CRC16Type.CRC16_CCITT_XModem);
             var result = crc.ComputeChecksum(bytes);
+
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [ClassData(typeof(ComputeChecksum))]
+        public void ComputeChecksum_String_Valid(string value, ushort expected)
+        {
+            var crcfactory = new CRC16Factory();
+            var crc = crcfactory.GetCRC16(CRC16Factory.CRC16Type.CRC16_CCITT_XModem);
+            var result = crc.ComputeChecksum(value);
 
             Assert.Equal(expected, result);
         }
@@ -38,7 +44,24 @@ namespace ADN.Security.Tests
         {
             var crcfactory = new CRC16Factory();
             var crc = crcfactory.GetCRC16(CRC16Factory.CRC16Type.CRC16_CCITT_XModem);
-            Assert.Throws<ArgumentNullException>(() => crc.ComputeChecksum(null));
+            byte[] bytes = null;
+            Assert.Throws<ArgumentNullException>(() => crc.ComputeChecksum(bytes));
+        }
+
+        public class ComputeChecksum : IEnumerable<object[]>
+        {
+            public IEnumerator<object[]> GetEnumerator()
+            {
+                yield return new object[] { "0123456789", 0x9C58 };
+                yield return new object[] { "ABCDEF", 0x944D };
+                yield return new object[] { "abcdef", 0x3AFD };
+                yield return new object[] { "this_is_a_test", 0xFA23 };
+                yield return new object[] { " !$%'()*-./", 0x70D1 };
+                yield return new object[] { ":;<=>?@", 0x578C };
+                yield return new object[] { "[\\]^_`{|}~", 0x5D34 };
+            }
+
+            IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
         }
     }
 }
