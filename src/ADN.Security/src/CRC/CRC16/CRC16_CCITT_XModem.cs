@@ -12,6 +12,9 @@ namespace ADN.Security
         private const ushort POLYNOMIAL = 0x1021;
         private static readonly ushort[] _table = new ushort[256];
 
+        /// <summary>
+        /// Class constructor.
+        /// </summary>
         public CRC16_CCITT_XModem()
         {
             ushort value;
@@ -39,6 +42,11 @@ namespace ADN.Security
             }
         }
 
+        /// <summary>
+        /// Compute the checksum for a giving <see cref="Byte"> <see cref="Array"/>.
+        /// </summary>
+        /// <param name="value">The <see cref="Byte"> <see cref="Array"/> that contains data to compute checksum.</param>
+        /// <returns>Computed checksum</returns>
         public override ushort ComputeChecksum(byte[] value)
         {
             if (ReferenceEquals(value, null) || value.Length <= 0)
@@ -57,9 +65,14 @@ namespace ADN.Security
             return crc;
         }
 
+        /// <summary>
+        /// Compute the checksum for a giving <see cref="string">.
+        /// </summary>
+        /// <param name="value">The <see cref="string"> that contains data to compute checksum.</param>
+        /// <returns>Computed checksum</returns>
         public override ushort ComputeChecksum(string value)
         {
-            return ComputeChecksum(Encoding.ASCII.GetBytes(value));
+            return ComputeChecksum(Encoding.UTF8.GetBytes(value));
         }
     }
 }

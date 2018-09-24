@@ -6,8 +6,18 @@ using System.Text;
 
 namespace ADN.Security
 {
+    /// <summary>
+    /// Represents a helper class to calculate Advanced Encryption Standard (AES).
+    /// </summary>
     public class Aes
     {
+        /// <summary>
+        /// Encrypt the giving <see cref="Byte"> <see cref="Array"/>.
+        /// </summary>
+        /// <param name="plainText">The <see cref="Byte"> <see cref="Array"/> that contains data to encrypt.</param>
+        /// <param name="Key">The <see cref="Byte"> <see cref="Array"/> that contains the key.</param>
+        /// <param name="IV">The <see cref="Byte"> <see cref="Array"/> that contains the initialize vector.</param>
+        /// <returns>The encrypted data.</returns>
         public static byte[] Encrypt(byte[] plainText, byte[] Key, byte[] IV)
         {
             // Check arguments
@@ -56,6 +66,13 @@ namespace ADN.Security
             return encrypted;
         }
 
+        /// <summary>
+        /// Decrypt the giving <see cref="Byte"> <see cref="Array"/>.
+        /// </summary>
+        /// <param name="cipherText">The <see cref="Byte"> <see cref="Array"/> that contains data to decrypt.</param>
+        /// <param name="Key">The <see cref="Byte"> <see cref="Array"/> that contains the key.</param>
+        /// <param name="IV">The <see cref="Byte"> <see cref="Array"/> that contains the initialize vector.</param>
+        /// <returns>The decrypted data.</returns>
         public static byte[] Decrypt(byte[] cipherText, byte[] Key, byte[] IV)
         {
             // Check arguments

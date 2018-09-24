@@ -4,8 +4,17 @@ using System.Text;
 
 namespace ADN.Security
 {
+    /// <summary>
+    /// Represents a helper class to calculate Tiny Encryption Algorithm (TEA).
+    /// </summary>
     public class Tea
     {
+        /// <summary>
+        /// Encrypt the giving <see cref="Byte"> <see cref="Array"/>.
+        /// </summary>
+        /// <param name="dataBytes">The <see cref="Byte"> <see cref="Array"/> that contains data to encrypt.</param>
+        /// <param name="Key">The <see cref="uint"> <see cref="Array"/> that contains the key.</param>
+        /// <returns>The encrypted data.</returns>
         public static byte[] Encrypt(byte[] dataBytes, uint[] Key)
         {
             // Check arguments
@@ -44,6 +53,12 @@ namespace ADN.Security
             return cipher;
         }
 
+        /// <summary>
+        /// Decrypt the giving <see cref="Byte"> <see cref="Array"/>.
+        /// </summary>
+        /// <param name="cipher">The <see cref="Byte"> <see cref="Array"/> that contains data to decrypt.</param>
+        /// <param name="Key">The <see cref="uint"> <see cref="Array"/> that contains the key.</param>
+        /// <returns>The decrypted data.</returns>
         public static byte[] Decrypt(byte[] cipher, uint[] Key)
         {
             // Check arguments
