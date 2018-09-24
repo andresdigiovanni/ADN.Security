@@ -8,13 +8,13 @@ using Xunit;
 
 namespace ADN.Security.Tests
 {
-    public class AesHelperTest
+    public class AesTest
     {
         [Theory]
         [ClassData(typeof(AESTestData))]
         public void Encrypt_Valid(byte[] value, byte[] key, byte[] IV, byte[] encrypted)
         {
-            var result = AesHelper.Encrypt(value, key, IV);
+            var result = Aes.Encrypt(value, key, IV);
 
             Assert.True(result.SequenceEqual(encrypted));
         }
@@ -22,44 +22,44 @@ namespace ADN.Security.Tests
         [Fact]
         public void Encrypt_Exception_Value_Empty()
         {
-            Assert.Throws<ArgumentNullException>(() => AesHelper.Encrypt(new byte[] { }, new byte[] { 0x00 }, new byte[] { 0x00 }));
+            Assert.Throws<ArgumentNullException>(() => Aes.Encrypt(new byte[] { }, new byte[] { 0x00 }, new byte[] { 0x00 }));
         }
 
         [Fact]
         public void Encrypt_Exception_Value_Null()
         {
-            Assert.Throws<ArgumentNullException>(() => AesHelper.Encrypt(null, new byte[] { 0x00 }, new byte[] { 0x00 }));
+            Assert.Throws<ArgumentNullException>(() => Aes.Encrypt(null, new byte[] { 0x00 }, new byte[] { 0x00 }));
         }
 
         [Fact]
         public void Encrypt_Exception_Key_Empty()
         {
-            Assert.Throws<ArgumentNullException>(() => AesHelper.Encrypt(new byte[] { 0x00 }, new byte[] { }, new byte[] { 0x00 }));
+            Assert.Throws<ArgumentNullException>(() => Aes.Encrypt(new byte[] { 0x00 }, new byte[] { }, new byte[] { 0x00 }));
         }
 
         [Fact]
         public void Encrypt_Exception_Key_Null()
         {
-            Assert.Throws<ArgumentNullException>(() => AesHelper.Encrypt(new byte[] { 0x00 }, null, new byte[] { 0x00 }));
+            Assert.Throws<ArgumentNullException>(() => Aes.Encrypt(new byte[] { 0x00 }, null, new byte[] { 0x00 }));
         }
 
         [Fact]
         public void Encrypt_Exception_IV_Empty()
         {
-            Assert.Throws<ArgumentNullException>(() => AesHelper.Encrypt(new byte[] { 0x00 }, new byte[] { 0x00 }, new byte[] { }));
+            Assert.Throws<ArgumentNullException>(() => Aes.Encrypt(new byte[] { 0x00 }, new byte[] { 0x00 }, new byte[] { }));
         }
 
         [Fact]
         public void Encrypt_Exception_IV_Null()
         {
-            Assert.Throws<ArgumentNullException>(() => AesHelper.Encrypt(new byte[] { 0x00 }, new byte[] { 0x00 }, null));
+            Assert.Throws<ArgumentNullException>(() => Aes.Encrypt(new byte[] { 0x00 }, new byte[] { 0x00 }, null));
         }
 
         [Theory]
         [ClassData(typeof(AESTestData))]
         public void Decrypt_Valid(byte[] value, byte[] key, byte[] IV, byte[] encrypted)
         {
-            var result = AesHelper.Decrypt(encrypted, key, IV);
+            var result = Aes.Decrypt(encrypted, key, IV);
 
             Assert.True(result.SequenceEqual(value));
         }
@@ -67,37 +67,37 @@ namespace ADN.Security.Tests
         [Fact]
         public void Decrypt_Exception_Value_Empty()
         {
-            Assert.Throws<ArgumentNullException>(() => AesHelper.Decrypt(new byte[] { }, new byte[] { 0x00 }, new byte[] { 0x00 }));
+            Assert.Throws<ArgumentNullException>(() => Aes.Decrypt(new byte[] { }, new byte[] { 0x00 }, new byte[] { 0x00 }));
         }
 
         [Fact]
         public void Decrypt_Exception_Value_Null()
         {
-            Assert.Throws<ArgumentNullException>(() => AesHelper.Decrypt(null, new byte[] { 0x00 }, new byte[] { 0x00 }));
+            Assert.Throws<ArgumentNullException>(() => Aes.Decrypt(null, new byte[] { 0x00 }, new byte[] { 0x00 }));
         }
 
         [Fact]
         public void Decrypt_Exception_Key_Empty()
         {
-            Assert.Throws<ArgumentNullException>(() => AesHelper.Decrypt(new byte[] { 0x00 }, new byte[] { }, new byte[] { 0x00 }));
+            Assert.Throws<ArgumentNullException>(() => Aes.Decrypt(new byte[] { 0x00 }, new byte[] { }, new byte[] { 0x00 }));
         }
 
         [Fact]
         public void Decrypt_Exception_Key_Null()
         {
-            Assert.Throws<ArgumentNullException>(() => AesHelper.Decrypt(new byte[] { 0x00 }, null, new byte[] { 0x00 }));
+            Assert.Throws<ArgumentNullException>(() => Aes.Decrypt(new byte[] { 0x00 }, null, new byte[] { 0x00 }));
         }
 
         [Fact]
         public void Decrypt_Exception_IV_Empty()
         {
-            Assert.Throws<ArgumentNullException>(() => AesHelper.Decrypt(new byte[] { 0x00 }, new byte[] { 0x00 }, new byte[] { }));
+            Assert.Throws<ArgumentNullException>(() => Aes.Decrypt(new byte[] { 0x00 }, new byte[] { 0x00 }, new byte[] { }));
         }
 
         [Fact]
         public void Decrypt_Exception_IV_Null()
         {
-            Assert.Throws<ArgumentNullException>(() => AesHelper.Decrypt(new byte[] { 0x00 }, new byte[] { 0x00 }, null));
+            Assert.Throws<ArgumentNullException>(() => Aes.Decrypt(new byte[] { 0x00 }, new byte[] { 0x00 }, null));
         }
 
         public class AESTestData : IEnumerable<object[]>

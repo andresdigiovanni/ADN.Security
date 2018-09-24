@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ADN.Security
 {
-    public class AesHelper
+    public class Aes
     {
         public static byte[] Encrypt(byte[] plainText, byte[] Key, byte[] IV)
         {
@@ -29,7 +29,7 @@ namespace ADN.Security
             byte[] encrypted = null;
 
             // Create an Aes object with the specified key and IV
-            using (Aes aesAlg = AesManaged.Create())
+            using (System.Security.Cryptography.Aes aesAlg = AesManaged.Create())
             {
                 aesAlg.Key = Key;
                 aesAlg.IV = IV;
@@ -78,7 +78,7 @@ namespace ADN.Security
             byte[] clearBytes = null;
 
             // Create an Aes object with the specified key and IV
-            using (Aes aesAlg = AesManaged.Create())
+            using (System.Security.Cryptography.Aes aesAlg = AesManaged.Create())
             {
                 aesAlg.Key = Key;
                 aesAlg.IV = IV;
