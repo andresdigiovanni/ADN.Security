@@ -3,6 +3,7 @@
 ADN.Security is a cross-platform open-source library which provides security functions to .NET developers.
 
 [![Build Status](https://travis-ci.org/andresdigiovanni/ADN.Security.svg?branch=master)](https://travis-ci.org/andresdigiovanni/ADN.Security)
+[![NuGet](https://img.shields.io/nuget/v/ADN.Security.svg)](https://www.nuget.org/packages/ADN.Security/)
 [![BCH compliance](https://bettercodehub.com/edge/badge/andresdigiovanni/ADN.Security?branch=master)](https://bettercodehub.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
