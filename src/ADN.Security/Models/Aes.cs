@@ -33,7 +33,7 @@ namespace ADN.Security
 
             if (ReferenceEquals(IV, null) || IV.Length <= 0)
             {
-                throw (new ArgumentNullException("Key"));
+                throw (new ArgumentNullException("IV"));
             }
 
             byte[] encrypted = null;
@@ -88,7 +88,7 @@ namespace ADN.Security
 
             if (ReferenceEquals(IV, null) || IV.Length <= 0)
             {
-                throw (new ArgumentNullException("Key"));
+                throw (new ArgumentNullException("IV"));
             }
 
             // Declare the string used to hold the decrypted text
