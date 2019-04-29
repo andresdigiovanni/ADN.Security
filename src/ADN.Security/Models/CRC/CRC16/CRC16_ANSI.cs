@@ -7,7 +7,7 @@ namespace ADN.Security
     /// <summary>
     /// Class CRC16 (Polynomial: 0xA001).
     /// </summary>
-    public class CRC16_ANSI : CRC16
+    public class CRC16_ANSI : ICRC16
     {
         private const ushort POLYNOMIAL = 0xA001;
         private static readonly ushort[] _table = new ushort[256];
@@ -47,7 +47,7 @@ namespace ADN.Security
         /// </summary>
         /// <param name="value">The <see cref="Byte"> <see cref="Array"/> that contains data to compute checksum.</param>
         /// <returns>Computed checksum</returns>
-        public override ushort ComputeChecksum(byte[] value)
+        public ushort ComputeChecksum(byte[] value)
         {
             if (ReferenceEquals(value, null) || value.Length <= 0)
             {
@@ -70,7 +70,7 @@ namespace ADN.Security
         /// </summary>
         /// <param name="value">The <see cref="string"> that contains data to compute checksum.</param>
         /// <returns>Computed checksum</returns>
-        public override ushort ComputeChecksum(string value)
+        public ushort ComputeChecksum(string value)
         {
             return ComputeChecksum(Encoding.UTF8.GetBytes(value));
         }

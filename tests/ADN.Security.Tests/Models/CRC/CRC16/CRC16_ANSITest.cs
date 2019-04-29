@@ -13,8 +13,7 @@ namespace ADN.Security.Tests
         public void ComputeChecksum_Bytes_Valid(string value, ushort expected)
         {
             var bytes = Encoding.ASCII.GetBytes(value);
-            var crcfactory = new CRC16Factory();
-            var crc = crcfactory.GetCRC16(CRC16Factory.CRC16Type.CRC16_ANSI);
+            var crc = new CRC16_ANSI();
             var result = crc.ComputeChecksum(bytes);
 
             Assert.Equal(expected, result);
@@ -24,8 +23,7 @@ namespace ADN.Security.Tests
         [ClassData(typeof(ComputeChecksum))]
         public void ComputeChecksum_String_Valid(string value, ushort expected)
         {
-            var crcfactory = new CRC16Factory();
-            var crc = crcfactory.GetCRC16(CRC16Factory.CRC16Type.CRC16_ANSI);
+            var crc = new CRC16_ANSI();
             var result = crc.ComputeChecksum(value);
 
             Assert.Equal(expected, result);
@@ -34,17 +32,15 @@ namespace ADN.Security.Tests
         [Fact]
         public void ComputeChecksum_Exception_Value_Empty()
         {
-            var crcfactory = new CRC16Factory();
-            var crc = crcfactory.GetCRC16(CRC16Factory.CRC16Type.CRC16_ANSI);
+            var crc = new CRC16_ANSI();
             Assert.Throws<ArgumentNullException>(() => crc.ComputeChecksum(new byte[] { }));
         }
 
         [Fact]
         public void ComputeChecksum_Exception_Value_Null()
         {
-            var crcfactory = new CRC16Factory();
-            var crc = crcfactory.GetCRC16(CRC16Factory.CRC16Type.CRC16_ANSI);
             byte[] bytes = null;
+            var crc = new CRC16_ANSI();
             Assert.Throws<ArgumentNullException>(() => crc.ComputeChecksum(bytes));
         }
 
