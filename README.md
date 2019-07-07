@@ -5,6 +5,8 @@ ADN.Security is a cross-platform open-source library which provides security fun
 [![Build Status](https://travis-ci.org/andresdigiovanni/ADN.Security.svg?branch=master)](https://travis-ci.org/andresdigiovanni/ADN.Security)
 [![NuGet](https://img.shields.io/nuget/v/ADN.Security.svg)](https://www.nuget.org/packages/ADN.Security/)
 [![BCH compliance](https://bettercodehub.com/edge/badge/andresdigiovanni/ADN.Security?branch=master)](https://bettercodehub.com/)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=andresdigiovanni_ADN.Security&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=andresdigiovanni_ADN.Security)
+[![Quality](https://sonarcloud.io/api/project_badges/measure?project=andresdigiovanni_ADN.Security&metric=alert_status)](https://sonarcloud.io/dashboard?id=andresdigiovanni_ADN.Security)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Installation

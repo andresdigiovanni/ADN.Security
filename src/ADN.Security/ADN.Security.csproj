@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <ProjectGuid>{F5A43A83-9BE0-495B-BF76-4BCFCBE4F7A9}</ProjectGuid>
     <Version>1.0.0</Version>
     <Title>ADN.Security</Title>
     <Authors>Andrés Di Giovanni</Authors>
