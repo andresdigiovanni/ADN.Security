@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ADN.Security</name>
+    </assembly>
+    <members>
+        <member name="T:ADN.Security.Aes">
+            <summary>
+            Represents a helper class to calculate Advanced Encryption Standard (AES).
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ADN.Security.Aes.Encrypt(System.Byte[],System.Byte[],System.Byte[])" -->
+        <!-- Badly formed XML comment ignored for member "M:ADN.Security.Aes.Decrypt(System.Byte[],System.Byte[],System.Byte[])" -->
+        <member name="T:ADN.Security.CRC16_ANSI">
+            <summary>
+            Class CRC16 (Polynomial: 0xA001).
+            </summary>
+        </member>
+        <member name="M:ADN.Security.CRC16_ANSI.#ctor">
+            <summary>
+            Class constructor.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ADN.Security.CRC16_ANSI.ComputeChecksum(System.Byte[])" -->
+        <!-- Badly formed XML comment ignored for member "M:ADN.Security.CRC16_ANSI.ComputeChecksum(System.String)" -->
+        <member name="T:ADN.Security.CRC16_CCITT_XModem">
+            <summary>
+            Class CRC16_CCITT_XModem (Polynomial: 0x1021).
+            </summary>
+        </member>
+        <member name="M:ADN.Security.CRC16_CCITT_XModem.#ctor">
+            <summary>
+            Class constructor.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ADN.Security.CRC16_CCITT_XModem.ComputeChecksum(System.Byte[])" -->
+        <!-- Badly formed XML comment ignored for member "M:ADN.Security.CRC16_CCITT_XModem.ComputeChecksum(System.String)" -->
+        <member name="T:ADN.Security.Tea">
+            <summary>
+            Represents a helper class to calculate Tiny Encryption Algorithm (TEA).
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ADN.Security.Tea.Encrypt(System.Byte[],System.UInt32[])" -->
+        <!-- Badly formed XML comment ignored for member "M:ADN.Security.Tea.Decrypt(System.Byte[],System.UInt32[])" -->
+    </members>
+</doc>

@@ -19,4 +19,8 @@
     <PackageIconUrl>http://raw.githubusercontent.com/andresdigiovanni/ADN.Security/master/icon.png</PackageIconUrl>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Code\adigiovanni\c#\ADN\ADN.Security\src\ADN.Security\ADN.Security.xml</DocumentationFile>
+  </PropertyGroup>
+
 </Project>
