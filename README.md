@@ -9,6 +9,17 @@ ADN.Security is a cross-platform open-source library which provides security fun
 [![Quality](https://sonarcloud.io/api/project_badges/measure?project=andresdigiovanni_ADN.Security&metric=alert_status)](https://sonarcloud.io/dashboard?id=andresdigiovanni_ADN.Security)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Basic usage
+
+Example CRC16:
+
+```csharp
+var text = "this is a test";
+var bytes = Encoding.ASCII.GetBytes(text);
+var crc = new CRC16_ANSI();
+var result = crc.ComputeChecksum(bytes);
+```
+
 ## Installation
 
 ADN.Security runs on Windows, Linux, and macOS.
